@@ -1,16 +1,15 @@
 import Head from "next/head";
 import Hero from "../components/Home";
-import SocialMediaLinks from "../components/SocialMediaLinks";
+import { project } from "../config/project";
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Aarush Goyal</title>
+        <title>{project.name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <Hero />
-        <SocialMediaLinks />
       </main>
     </div>
   );

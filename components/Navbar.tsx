@@ -9,19 +9,14 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import {
-  FaDev,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { project } from "../config/project";
 
 const Logo = (props) => {
   return (
     <Box {...props}>
       <Text fontSize="lg" fontWeight="bold">
-        Aarush Goyal
+        {project.name}
       </Text>
     </Box>
   );
@@ -96,43 +91,22 @@ const MenuLinks = ({ isOpen }) => {
         direction={["column", "row", "row", "row"]}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem link="#hero">Home</MenuItem>
-        <MenuItem link="#about">About </MenuItem>
-        <MenuItem link="#projects">Projects </MenuItem>
-        <Flex display={["flex", "none"]}>
-          <MenuItem p="4" link="https://instagram.com/aarushgoyal_">
-            <FaInstagram />
-          </MenuItem>
-          <Spacer />
-          <MenuItem p="4" link="https://twitter.com/aarushgoyal_">
-            <FaTwitter />
-          </MenuItem>
-          <Spacer />
-          <MenuItem p="4" link="https://www.github.com/Aarush-Goyal">
-            <FaGithub />
-          </MenuItem>
-          <Spacer />
-          <MenuItem p="4" link="https://linkedin.com/in/aarush-goyal">
-            <FaLinkedin />
-          </MenuItem>
-          <Spacer />
-          <MenuItem p="4" link="https://dev.to/aarushgoyal">
-            <FaDev />
-          </MenuItem>
-        </Flex>
-        {/* <MenuItem component="event">
+        <MenuItem link="/">Home</MenuItem>
+        <MenuItem link="/developers">Our Developers </MenuItem>
+
+        <MenuItem link={project.linkToRepo}>
           <Button
             size="sm"
             rounded="md"
             color="primary.500"
             bg="white"
             _hover={{
-              bg: ["cyan.100", "cyan.100", "cyan.600", "cyan.600"],
+              bg: ["whiteAlpha.600"],
             }}
           >
-            Connect with Me
+            <FaGithub /> <Text ml="2">Github</Text>
           </Button>
-        </MenuItem> */}
+        </MenuItem>
         <Spacer />
       </Stack>
     </Box>

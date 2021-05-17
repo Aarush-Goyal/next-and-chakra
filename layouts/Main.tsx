@@ -7,7 +7,6 @@ const Main = (props) => {
     <>
       <NavBar />
       {props.children}
-      <Footer />
     </>
   );
 };

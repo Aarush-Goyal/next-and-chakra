@@ -1,19 +1,37 @@
-import { Flex, Heading, Image } from "@chakra-ui/react";
+import { Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import Link from "next/link";
+import { project } from "../config/project";
+import Footer from "./Footer";
 const Hero = () => {
   return (
     <Flex
       width="100%"
       height="100vh"
       backgroundColor="back.800"
-      // backgroundImage="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/back.png')"
-      // backgroundPosition="top"
+      // backgroundImage="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/back.jpg')"
+      backgroundPosition="top"
       align="center"
       justify="center"
       direction="column"
+      padding="10"
+      textAlign="center"
     >
-      <Heading color="white" fontSize={["3xl", "5xl"]}>
-        Konichiwa 👋
+      <Heading color="white" fontSize={["6xl", "9xl"]}>
+        {project.name}
       </Heading>
+      <Text color="whiteAlpha.800" fontSize={["xl", "2xl"]} pt="5">
+        {project.description}
+      </Text>
+      <Button
+        backgroundColor="white"
+        _hover={{ backgroundColor: "whiteAlpha.800" }}
+        fontSize="2xl"
+        padding="6"
+        mt="20"
+      >
+        <Link href="/dashboard">Ready to use it? 🚀</Link>
+      </Button>
+      <Footer />
     </Flex>
   );
 };
