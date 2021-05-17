@@ -1,7 +1,9 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { v4 as uuidv4 } from 'uuid';
 import { developers } from "../../config/developers";
 import Header from "../Header";
 import Developer from "./Developer";
+
 const DevelopersBody = () => {
   return (
     <>
@@ -15,6 +17,7 @@ const DevelopersBody = () => {
       >
         {developers.map((developer) => (
           <Developer
+            key={uuidv4()}
             name={developer.name}
             role={developer.role}
             description={developer.description}
