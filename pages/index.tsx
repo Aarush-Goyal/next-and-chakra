@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Hero from "../components/Home";
 import { project } from "../config/project";
+import Main from "../layouts/Main";
 export default function Home() {
   return (
     <div>
@@ -8,9 +9,10 @@ export default function Home() {
         <title>{project.name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <Main>
         <Hero />
-      </main>
+      </Main>
+
     </div>
   );
 }
