@@ -16,7 +16,8 @@
     "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-icons": "^4.1.0"
+    "react-icons": "^4.1.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/node": "^15.3.0",

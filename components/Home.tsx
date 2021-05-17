@@ -22,15 +22,15 @@ const Hero = () => {
       <Text color="whiteAlpha.800" fontSize={["xl", "2xl"]} pt="5">
         {project.description}
       </Text>
-      <Button
+
+      <Link href="/dashboard"><Button
         backgroundColor="white"
         _hover={{ backgroundColor: "whiteAlpha.800" }}
         fontSize="2xl"
         padding="6"
         mt="20"
-      >
-        <Link href="/dashboard">Ready to use it? 🚀</Link>
-      </Button>
+      >Ready to use it? 🚀</Button></Link>
+
       <Footer />
     </Flex>
   );
