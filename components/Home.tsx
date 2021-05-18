@@ -9,6 +9,7 @@ const Hero = () => {
       height="100vh"
       backgroundColor="back.800"
       backgroundImage="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/back.svg')"
+      backgroundSize="cover"
       backgroundPosition="top"
       align="center"
       justify="center"
