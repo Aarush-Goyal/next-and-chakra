@@ -93,6 +93,7 @@ const MenuLinks = ({ isOpen }) => {
       >
         <MenuItem link="/">Home</MenuItem>
         <MenuItem link="/developers">Our Developers </MenuItem>
+        <MenuItem link="/blog">Blog </MenuItem>
 
         <MenuItem link={project.linkToRepo}>
           <Button
