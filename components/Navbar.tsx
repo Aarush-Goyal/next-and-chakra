@@ -7,10 +7,13 @@ import {
   Button,
   Stack,
   Spacer,
+  Image,
+  Avatar
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { project } from "../config/project";
+import { signIn, signOut, useSession } from "next-auth/client"
 
 const Logo = (props) => {
   return (
@@ -79,6 +82,7 @@ const MenuItem = ({ children, link, ...rest }) => {
 };
 
 const MenuLinks = ({ isOpen }) => {
+  const [session, loading] = useSession()
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -95,7 +99,10 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem link="/developers">Our Developers </MenuItem>
         <MenuItem link="/blog">Blog </MenuItem>
 
-        <MenuItem link={project.linkToRepo}>
+
+
+
+        {!session && (
           <Button
             size="sm"
             rounded="md"
@@ -104,11 +111,36 @@ const MenuLinks = ({ isOpen }) => {
             _hover={{
               bg: ["whiteAlpha.600"],
             }}
+            onClick={() => signIn()}
           >
-            <FaGithub /> <Text ml="2">Github</Text>
+            <FaGithub /> <Text ml="2">Sign In</Text>
           </Button>
-        </MenuItem>
-        <Spacer />
+        )}
+
+        {session && (
+          <ChakraLink
+            size="sm"
+            // rounded="md"
+            color="white"
+            // bg="white"
+            // _hover={{
+            //   bg: ["whiteAlpha.600"],
+            // }}
+            onClick={() => signOut()}
+          >
+            <Text>Sign Out</Text>
+          </ChakraLink>
+        )}
+        {/* <Spacer /> */}
+
+        {session && (
+          <>
+            {/* <Text>{session.user.name}</Text> */}
+            <Avatar src={session.user.image} />
+          </>
+        )}
+
+
       </Stack>
     </Box>
   );
