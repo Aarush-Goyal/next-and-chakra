@@ -1,17 +1,17 @@
 version: "3"
 services:
   frontend:
-    container_name: next-app
-    build: 
-        context: .
-        dockerfile: "./Dockerfile"
-    env_file: "./.env"
+    build:
+      context: .
+      dockerfile: "./Dockerfile"
+    env_file:
+      - "./.env.local"
     restart: always
-    env_file: .env
+
   nginx:
     image: "nginx:stable-alpine"
     depends_on:
-        - frontend
+      - frontend
     ports:
       - "80:80"
     volumes:
