@@ -111,7 +111,7 @@ const MenuLinks = ({ isOpen }) => {
             _hover={{
               bg: ["whiteAlpha.600"],
             }}
-            onClick={() => signIn()}
+            onClick={() => signIn("github")}
           >
             <FaGithub /> <Text ml="2">Sign In</Text>
           </Button>
